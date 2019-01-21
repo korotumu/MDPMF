@@ -1,0 +1,13 @@
+,Prob,OldLikesFormal,MidLikesFormal,YoungLikesFormal,NPCAge,inConversation,Greeted,Asked,NPC_happy,GotWater
+varMin,,-2,-2,-2,0,0,0,0,0,0
+varMax,,2,2,2,3,1,1,1,1,1
+startVal,,0,0,0,0,0,0,0,0,0
+greetFormal,1,NPCAge == 3 ? (OldLikesFormal < 2 ? 1 : 0) : 0,NPCAge == 2 ? (MidLikesFormal > -2 ? -1 : 0) : 0,NPCAge == 1 ? (YoungLikesFormal < 2 ? 1 : 0) : 0,0,(inConversation - 1),1,0,:: NPCAge == 1 ? YoungLikesFormal >0 : (NPCAge == 2 ? MidLikesFormal > 0 : (NPCAge == 3 ? OldLikesFormal > 0 : 0) ),0
+greetInformal,1,NPCAge == 3 ? (OldLikesFormal < 2 ? 1 : 0) : 0,NPCAge == 2 ? (MidLikesFormal > -2 ? -1 : 0) : 0,NPCAge == 1 ? (YoungLikesFormal < 2 ? 1 : 0) : 0,0,(inConversation - 1),1,0,:: NPCAge == 1 ? YoungLikesFormal <0 : (NPCAge == 2 ? MidLikesFormal < 0 : (NPCAge == 3 ? OldLikesFormal < 0 : 0) ),0
+askFormal,1,NPCAge == 3 ? (OldLikesFormal < 2 ? 1 : 0) : 0,NPCAge == 2 ? (MidLikesFormal > -2 ? -1 : 0) : 0,NPCAge == 1 ? (YoungLikesFormal < 2 ? 1 : 0) : 0,0,(inConversation - 1),0,::1,0,":: max( (NPC_happy == 1 ? (NPCAge == 1 ? YoungLikesFormal > 0 : (NPCAge == 2 ? MidLikesFormal > 0 : (NPCAge == 3 ? OldLikesFormal > 0 : 0) ) ) : 0), GotWater)"
+askInformal,1,NPCAge == 3 ? (OldLikesFormal < 2 ? 1 : 0) : 0,NPCAge == 2 ? (MidLikesFormal > -2 ? -1 : 0) : 0,NPCAge == 1 ? (YoungLikesFormal < 2 ? 1 : 0) : 0,0,(inConversation - 1),0,::1,0,":: max( (NPC_happy == 1 ? (NPCAge == 1 ? YoungLikesFormal < 0 : (NPCAge == 2 ? MidLikesFormal < 0 : (NPCAge == 3 ? OldLikesFormal < 0 : 0) )) : 0), GotWater)"
+chooseClayton,1,0,0,0,::3,1,0,0,0,0
+chooseBelle,1,0,0,0,::1,1,0,0,0,0
+chooseMid,1,0,0,0,::2,1,0,0,0,0
+endConversation,1,0,0,0,::0,-1,::0,::0,::0,0
+EndMission,1,0,0,0,0,1,0,0,0,0

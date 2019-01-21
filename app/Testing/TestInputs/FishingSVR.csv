@@ -1,0 +1,5 @@
+GetJob,25,EndMission,Knowledge >= 5
+TimeCost,-1,*,1
+StudyCost,-1,Study,1
+SellOne,2,SellOne,1
+SellFive,12,SellFive,1

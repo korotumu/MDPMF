@@ -1,0 +1,41 @@
+,Prob,OldLikesFormal,MidLikesFormal,YoungLikesFormal,NPCAge,inConversation,Greeted,Asked,NPC_happy,GotWater
+varMin,,-2,-2,-2,0,0,0,0,0,0
+varMax,,2,2,2,3,1,1,1,1,1
+startVal,,0,0,0,0,0,0,0,0,0
+greetFormal,0.3,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( 1 ) : 0,0,0,1,0,:: NPCAge == 2 ? 0 : 1,0
+greetFormal,0.3,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( abs(OldLikesFormal) <= 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * ( abs(MidLikesFormal) <= 1)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( abs(YoungLikesFormal) <= 1 ) : 0,0,0,1,0,:: NPCAge == 2 ? 0 : 1,0
+greetFormal,0.35,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( OldLikesFormal == 0 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * (MidLikesFormal == 0)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( YoungLikesFormal == 0 ) : 0,0,0,1,0,:: NPCAge == 2 ? 0 : 1,0
+greetFormal,0.05,0,0,0,0,0,1,0,:: NPCAge == 2 ? 0 : 1,0
+greetFormal,0.3,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( 1 ) : 0,0,0,:: 1,0,:: NPCAge == 2 ? 0 : 1,0
+greetFormal,0.3,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( abs(OldLikesFormal) <= 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * ( abs(MidLikesFormal) <= 1)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( abs(YoungLikesFormal) <= 1 ) : 0,0,0,:: 1,0,:: NPCAge == 2 ? 0 : 1,0
+greetFormal,0.35,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( OldLikesFormal == 0 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * (MidLikesFormal == 0)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( YoungLikesFormal == 0 ) : 0,0,0,:: 1,0,:: NPCAge == 2 ? 0 : 1,0
+greetFormal,0.05,0,0,0,0,0,:: 1,0,:: NPCAge == 2 ? 0 : 1,0
+greetInformal,0.3,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( 1 ) : 0,0,0,1,0,:: NPCAge == 2 ? 1 : 0,0
+greetInformal,0.3,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( abs(OldLikesFormal) <= 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * ( abs(MidLikesFormal) <= 1)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( abs(YoungLikesFormal) <= 1 ) : 0,0,0,1,0,:: NPCAge == 2 ? 1 : 0,0
+greetInformal,0.35,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( OldLikesFormal == 0 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * (MidLikesFormal == 0)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( YoungLikesFormal == 0 ) : 0,0,0,1,0,:: NPCAge == 2 ? 1 : 0,0
+greetInformal,0.05,0,0,0,0,0,1,0,:: NPCAge == 2 ? 1 : 0,0
+greetInformal,0.3,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( 1 ) : 0,0,0,:: 1,0,:: NPCAge == 2 ? 1 : 0,0
+greetInformal,0.3,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( abs(OldLikesFormal) <= 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * ( abs(MidLikesFormal) <= 1)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( abs(YoungLikesFormal) <= 1 ) : 0,0,0,:: 1,0,:: NPCAge == 2 ? 1 : 0,0
+greetInformal,0.35,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( OldLikesFormal == 0 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * (MidLikesFormal == 0)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( YoungLikesFormal == 0 ) : 0,0,0,:: 1,0,:: NPCAge == 2 ? 1 : 0,0
+greetInformal,0.05,0,0,0,0,0,:: 1,0,:: NPCAge == 2 ? 1 : 0,0
+askFormal,0.29,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( 1 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 0 : 1, NPC_happy)",":: max( (NPCAge == 2 ? 0 : NPC_happy), GotWater)"
+askFormal,0.29,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( abs(OldLikesFormal) <= 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * ( abs(MidLikesFormal) <= 1)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( abs(YoungLikesFormal) <= 1 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 0 : 1, NPC_happy)",":: max( (NPCAge == 2 ? 0 : NPC_happy), GotWater)"
+askFormal,0.34,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( OldLikesFormal == 0 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * (MidLikesFormal == 0)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( YoungLikesFormal == 0 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 0 : 1, NPC_happy)",":: max( (NPCAge == 2 ? 0 : NPC_happy), GotWater)"
+askFormal,0.04,0,0,0,0,0,0,::1,":: max(NPCAge == 2 ? 0 : 1, NPC_happy)",":: max( (NPCAge == 2 ? 0 : NPC_happy), GotWater)"
+askFormal,0.01,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( 1 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 0 : 1, NPC_happy)",:: 1
+askFormal,0.01,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( abs(OldLikesFormal) <= 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * ( abs(MidLikesFormal) <= 1)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( abs(YoungLikesFormal) <= 1 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 0 : 1, NPC_happy)",:: 1
+askFormal,0.01,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( OldLikesFormal == 0 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * (MidLikesFormal == 0)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( YoungLikesFormal == 0 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 0 : 1, NPC_happy)",:: 1
+askFormal,0.01,0,0,0,0,0,0,::1,":: max(NPCAge == 2 ? 0 : 1, NPC_happy)",:: 1
+askInformal,0.29,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( 1 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 1 : 0, NPC_happy)",":: max( (NPCAge == 2 ? NPC_happy : 0), GotWater)"
+askInformal,0.29,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( abs(OldLikesFormal) <= 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * ( abs(MidLikesFormal) <= 1)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( abs(YoungLikesFormal) <= 1 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 1 : 0, NPC_happy)",":: max( (NPCAge == 2 ? NPC_happy : 0), GotWater)"
+askInformal,0.34,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( OldLikesFormal == 0 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * (MidLikesFormal == 0)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( YoungLikesFormal == 0 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 1 : 0, NPC_happy)",":: max( (NPCAge == 2 ? NPC_happy : 0), GotWater)"
+askInformal,0.04,0,0,0,0,0,0,::1,":: max(NPCAge == 2 ? 1 : 0, NPC_happy)",":: max( (NPCAge == 2 ? NPC_happy : 0), GotWater)"
+askInformal,0.01,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( 1 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 1 : 0, NPC_happy)",:: 1
+askInformal,0.01,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( abs(OldLikesFormal) <= 1 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * ( abs(MidLikesFormal) <= 1)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( abs(YoungLikesFormal) <= 1 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 1 : 0, NPC_happy)",:: 1
+askInformal,0.01,(NPCAge == 3 && OldLikesFormal < 2 ) ? ( OldLikesFormal == 0 ) : 0,( NPCAge == 2 && MidLikesFormal > -2) ? (-1) * (MidLikesFormal == 0)  : 0,(NPCAge == 1 && YoungLikesFormal < 2 ) ? ( YoungLikesFormal == 0 ) : 0,0,0,0,::1,":: max(NPCAge == 2 ? 1 : 0, NPC_happy)",:: 1
+askInformal,0.01,0,0,0,0,0,0,::1,":: max(NPCAge == 2 ? 1 : 0, NPC_happy)",:: 1
+chooseClayton,1,0,0,0,::3,1,0,0,0,0
+chooseBelle,1,0,0,0,::1,1,0,0,0,0
+chooseMid,1,0,0,0,::2,1,0,0,0,0
+endConversation,1,0,0,0,::0,-1,::0,::0,::0,0
+EndMission,1,0,0,0,::0,::0,::0,::0,::0,0

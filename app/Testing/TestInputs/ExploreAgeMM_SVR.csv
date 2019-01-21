@@ -1,0 +1,5 @@
+GotAllInfo,3,EndMission,abs(OldLikesFormal) + abs(MidLikesFormal) + abs(YoungLikesFormal) == 6
+GotSomeInfo,2,EndMission,abs(OldLikesFormal) + abs(MidLikesFormal) + abs(YoungLikesFormal) >= 3
+GotBitOfInfo,1,EndMission,abs(OldLikesFormal) + abs(MidLikesFormal) + abs(YoungLikesFormal) > 1
+GotWater,5,EndMission,GotWater
+TimeCost,-0.5,*,1
