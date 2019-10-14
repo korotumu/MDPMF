@@ -1,3 +1,4 @@
+Label,Value,Action,Condition
 GetJob,25,EndMission,Knowledge >= 5
 TimeCost,-1,*,1
 StudyCost,-1,Study,1

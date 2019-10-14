@@ -1,7 +1,7 @@
-,Prob,Fish,Knowledge,TimeLeft
-varMin,,0,0,0
-varMax,,5,5,20
-startVal,,0,0,20
+Action,Prob,Fish,Knowledge,TimeLeft
+varMin,0,0,0,0
+varMax,0,5,5,20
+startVal,0,0,0,20
 Fish,0.5,1,0,-1
 Fish,0.5,0,0,-1
 SellOne,1,-1,0,-1

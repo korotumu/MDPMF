@@ -31,7 +31,7 @@
 
 #include <vector>
 #include <string>
-#include <MDPLib.h>
+#include <MDPlib.h>
 
 namespace MDPLIB {
 
