@@ -38,7 +38,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -std=c++0x -I"C:\MinGW\include" -I"/mingw64/lib" -I/usr/local/include -I"../../lib/src" -O3 -Wall -c -fmessage-length=0 --std=gnu++11  -Wl,--stack,4194304 -fopenmp -Wa,-mbig-obj -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -std=c++0x -I/usr/local/include -I"../../lib/src" -O3 -Wall -c -fmessage-length=0 --std=gnu++11  -Wl,--stack,4194304 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

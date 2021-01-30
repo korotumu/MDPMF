@@ -33,7 +33,7 @@
 #include "ActionEffectTable.h"
 #include "StateVarList.h"
 #include <thread>
-#include <omp.h>
+//#include <omp.h>
 #include <fstream>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>

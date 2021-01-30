@@ -23,9 +23,7 @@ CPP_SRCS += \
 ../src/RewardTable.cpp \
 ../src/SimEngine.cpp \
 ../src/State.cpp \
-../src/StateGrid.cpp \
 ../src/StateSpace.cpp \
-../src/StateSpaceGrid.cpp \
 ../src/StateSpaceVarList.cpp \
 ../src/StateVarList.cpp \
 ../src/State_test.cpp \
@@ -53,9 +51,7 @@ OBJS += \
 ./src/RewardTable.o \
 ./src/SimEngine.o \
 ./src/State.o \
-./src/StateGrid.o \
 ./src/StateSpace.o \
-./src/StateSpaceGrid.o \
 ./src/StateSpaceVarList.o \
 ./src/StateVarList.o \
 ./src/State_test.o \
@@ -98,7 +94,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -I/usr/local/include -I"C:\msys64\mingw64\include" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -std=c++11 -I/usr/local/include -I"C:\msys64\mingw64\include" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

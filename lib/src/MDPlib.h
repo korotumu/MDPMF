@@ -38,8 +38,6 @@ Princeton, NJ 08541
 #include "TransTable.h"
 #include "StateVarList.h"
 #include "StateSpaceVarList.h"
-#include "StateGrid.h"
-#include "StateSpaceGrid.h"
 #include "ActionSequence.h"
 #include "MDPIRTModel.h"
 #include "SimEngine.h"

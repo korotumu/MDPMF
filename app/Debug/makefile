@@ -44,7 +44,7 @@ all: mdpmf.exe
 mdpmf.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	g++ -L"/mingw64/lib" -L"../../MDP Library/Debug" -L"C:\Users\MLAMAR\OneDrive - Educational Testing Service\EclipseWorkspace\MDP Library\Release" -fopenmp -o "mdpmf.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"../../lib/Debug"  -o "mdpmf.exe" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

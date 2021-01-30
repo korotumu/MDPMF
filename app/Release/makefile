@@ -45,7 +45,7 @@ all: mdpmf.exe
 mdpmf.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	g++ -L"/mingw64/lib" -L"../../lib/Release" -static -static-libgcc -static-libstdc++ -Wl,--stack,4194304 -fopenmp -o "mdpmf.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"../../lib/Release" -o "mdpmf.exe" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
