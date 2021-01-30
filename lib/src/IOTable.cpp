@@ -32,11 +32,13 @@ namespace MDPLIB {
 
 int MDPLIB::IOTable::addColumn(string name, vector<string> values) {
 	// If there are other columns, ensure that this one is the same size
-	if(values.size() != nRow)
+	if(nCol > 0 && (values.size() != nRow))
 		return MDP_ERROR;
 
 	colNames.push_back(name);
 	cellValues.push_back(values);
+	if(nCol == 0)
+	  nRow = values.size();
 	nCol++;
 
 	return MDP_SUCCESS;
