@@ -1,0 +1,18 @@
+CXX_STD = CXX11
+PKG_CXXFLAGS = -I. -g -O2
+PKG_LIBS =  -lnlopt -lm 
+CC=ccache gcc
+CXX=ccache g++
+
+# Include all C++ files in src/ and its subdirectories: src/A and src/B 
+#SOURCES=*.cpp
+
+# Obtain the object files
+#OBJECTS=$(SOURCES:.cpp=.o) 
+
+# Make the shared object
+#all: $(SHLIB)
+
+# Provide recipe to remove all objects
+#clean:
+#	@rm -f $(OBJECTS)
