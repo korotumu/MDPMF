@@ -29,6 +29,7 @@
 
 #include "Mdpmf.h"
 #include "CompiledModel.h"
+#include "TableIOUtils.h"
 #include <boost/program_options.hpp>
 #include <iostream>
 
@@ -315,7 +316,7 @@ int main(int arc,  char* argv[]) {
 
 		actionET_filename.assign(varMap["actionEffectFile"].as<string>());
 
-		aeTab = new ActionEffectTable;
+		aeTab = new ActionEffectTable();
 
 		stopAction = "EndMission";
 		//If Stop Action is specified using command-line
@@ -327,7 +328,7 @@ int main(int arc,  char* argv[]) {
 			cout << "Unable to find or parse the Action Effect table file " << actionET_filename << "\n";
 			return 1;
 		}
-
+		
 		// Need a Reward specification table:
 		if(varMap.count("rewardFile") == 0) {
 			cout << "Reward Structure file must be specified using the --rewardFile option\n";
@@ -363,6 +364,8 @@ int main(int arc,  char* argv[]) {
 		}
 		actions->setStopAction(stopAct->getId());
 
+
+		reward = new ActionEffectReward();
 		reward = new ActionEffectReward(states, actions);
 		// Initialize this before the transitions to find file format issues before doing the
 		// long slog through the transition initialization.  We may have to re-init afterward if

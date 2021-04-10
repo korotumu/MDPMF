@@ -31,11 +31,12 @@
 
 #include <vector>
 #include <string>
-#include <MDPlib.h>
-#include <Reward.h>
-#include <iostream>
-#include <stdio.h>
-#include <muParser.h>
+#include "ActionSet.h"
+#include "Reward.h"
+#include "StateSpaceVarList.h"
+#include "StateProb.h"
+#include "muParser.h"
+#include "IOTable.h"
 #include <boost/tokenizer.hpp>
 #include <fstream>
 #include <boost/archive/binary_oarchive.hpp>
@@ -83,7 +84,7 @@ private:
 	vector<float> defaultValues;
 	vector<float> currValues;
 	vector<string> condExprStr;
-	vector<mu::Parser> condExpr;
+	vector<mu::Parser *> condExpr;
 
 	vector<string> stateVarNames;
 	vector<double> stateVarValues;
@@ -106,7 +107,7 @@ private:
 	int loadRewardsFromIOTable(IOTable iot);
 	void resetParamIndicies();
 	void setCondMap();
-	bool evalCond(mu::Parser cond, int stateId);
+	bool evalCond(mu::Parser *cond, int stateId);
 	float dotProd(vector<bool> b1, vector<bool> b2, vector<float> f);
 	void loadStateValues(int sId);
 

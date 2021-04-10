@@ -99,7 +99,7 @@ int MDPLIB::ActionEffectTable::readFromIOTable(IOTable iot) {
 
 	lastAct = "";
 	action_strings = iot.getCol(0);
-	for(v = 3; v <action_strings.size(); v++) {
+	for(v = rowNum; v <action_strings.size(); v++) {
 		if(action_strings[v] != lastAct){
 			actionList.push_back(action_strings[v]);
 			lastAct = action_strings[v];

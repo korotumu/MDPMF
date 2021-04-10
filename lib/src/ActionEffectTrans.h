@@ -29,7 +29,7 @@
 #ifndef ACTIONEFFECTTRANS_H_
 #define ACTIONEFFECTTRANS_H_
 
-#include <Transition.h>
+#include "Transition.h"
 #include "ActionEffectTable.h"
 #include "StateVarList.h"
 #include <thread>
@@ -61,6 +61,9 @@ public:
 	virtual int selectNextState(int aId, int s1Id);
 	virtual State *selectNextState(Action *action, State *s1);
 
+        int setStartState(State *s);
+        int setStartState(int sId);
+        State *getStartState();
 
 	void initActResStates();
 	void initPartActResStates(int s_start, int s_end, int na);
@@ -81,6 +84,7 @@ public:
 protected:
 	ActionEffectTable actEffTab;
 	StateSpaceVarList *statesVL;
+        State *startState;
 	vector< vector< vector<StateProb> > > actResStates;
 	bool actResStatesInitialized;
 	int numThreads;

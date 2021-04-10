@@ -47,7 +47,7 @@ int ActionEffectReward::initFromIOTable(IOTable iot) {
 	pListMap.clear();
 	paramMin.clear();
 	paramMax.clear();
-	condExpr.clear();
+	condExpr.clear();    // TODO: This is a potential memory leak.  We should free all memory existing here
 	stateVarNames.clear();
 	stateVarValues.clear();
 
@@ -65,13 +65,13 @@ int ActionEffectReward::initFromIOTable(IOTable iot) {
 	try {
 		for(i=0; i< (int)numRParams; i++) {
 			// Create the conditional expression
-			condExpr.push_back(mu::Parser());
+			condExpr.push_back(new mu::Parser());
 
 			// Add the symbol table
 			for(v=0; v < nsv; v++) {
-				condExpr[i].DefineVar(stateVarNames[v], &(stateVarValues[v]));
+			  condExpr[i]->DefineVar(stateVarNames[v], &(stateVarValues[v]));
 			}
-			condExpr[i].SetExpr(condExprStr[i]);
+			condExpr[i]->SetExpr(condExprStr[i]);
 
 			// Set the param estimation vectors:
 			estParams.push_back(0);
@@ -109,7 +109,7 @@ void ActionEffectReward::setCondMap() {
 		loadStateValues(s);
 		for(auto c : condExpr) {
 			try {
-				cVal = c.Eval();
+				cVal = c->Eval();
 			} catch (mu::Parser::exception_type &e) {
 				std::cout << "Error parsing expression in Reward File: " << e.GetExpr() << endl;
 				std::cout << e.GetMsg() << endl;

@@ -37,9 +37,9 @@
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/serialization/vector.hpp>
-#include "MDPlib.h"
 #include "VarDesc.h"
 #include "ActionEffectProb.h"
+#include "StateSpaceVarList.h"
 #include "IOTable.h"
 
 #define AT_ERROR_VALUE 99

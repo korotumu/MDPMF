@@ -1,10 +1,16 @@
-################################################################################
-# Automatically-generated file. Do not edit!
-################################################################################
-
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/muParser.cpp \
+../src/muParserBase.cpp \
+../src/muParserBytecode.cpp \
+../src/muParserCallback.cpp \
+../src/muParserError.cpp \
+../src/muParserTokenReader.cpp \
 ../src/Action.cpp \
+../src/ActionEffectPlayRecs.cpp \
+../src/ActionEffectReward.cpp \
+../src/ActionEffectTable.cpp \
+../src/ActionEffectTrans.cpp \
 ../src/ActionSequence.cpp \
 ../src/ActionSet.cpp \
 ../src/BootstrapEstimator.cpp \
@@ -29,10 +35,20 @@ CPP_SRCS += \
 ../src/State_test.cpp \
 ../src/TransTable.cpp \
 ../src/Transition.cpp \
-../src/VarDesc.cpp 
+../src/VarDesc.cpp
 
 OBJS += \
+./src/muParser.o \
+./src/muParserBase.o \
+./src/muParserBytecode.o \
+./src/muParserCallback.o \
+./src/muParserError.o \
+./src/muParserTokenReader.o \
 ./src/Action.o \
+./src/ActionEffectPlayRecs.o \
+./src/ActionEffectReward.o \
+./src/ActionEffectTable.o \
+./src/ActionEffectTrans.o \
 ./src/ActionSequence.o \
 ./src/ActionSet.o \
 ./src/BootstrapEstimator.o \
@@ -60,7 +76,17 @@ OBJS += \
 ./src/VarDesc.o 
 
 CPP_DEPS += \
+./src/muParser.d \
+./src/muParserBase.d \
+./src/muParserBytecode.d \
+./src/muParserCallback.d \
+./src/muParserError.d \
+./src/muParserTokenReader.d \
 ./src/Action.d \
+./src/ActionEffectPlayRecs.d \
+./src/ActionEffectReward.d \
+./src/ActionEffectTable.d \
+./src/ActionEffectTrans.d \
 ./src/ActionSequence.d \
 ./src/ActionSet.d \
 ./src/BootstrapEstimator.d \
@@ -94,7 +120,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -std=c++11 -I/usr/local/include -I"C:\msys64\mingw64\include" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -std=c++11 -I/usr/local/include -I"/mingw64/include" -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

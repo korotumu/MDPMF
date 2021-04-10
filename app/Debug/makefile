@@ -44,7 +44,7 @@ all: mdpmf.exe
 mdpmf.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	g++ -L"../../lib/Debug"  -o "mdpmf.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -fsanitize=address -L"../../lib/Debug"  -o "mdpmf.exe" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

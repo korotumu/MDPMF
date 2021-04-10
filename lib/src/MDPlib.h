@@ -44,6 +44,11 @@ Princeton, NJ 08541
 #include "ParamList.h"
 #include "BootstrapEstimator.h"
 #include "IOTable.h"
+#include "ActionEffectTable.h"
+#include "ActionEffectTrans.h"
+#include "ActionEffectReward.h"
+#include "ActionEffectPlayRecs.h"
+
 
 
 #endif /* MDPLIB_H_ */

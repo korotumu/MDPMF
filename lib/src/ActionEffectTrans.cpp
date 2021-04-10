@@ -38,6 +38,7 @@ ActionEffectTrans::ActionEffectTrans(ActionEffectTable aeTab, StateSpaceVarList 
 	statesVL = ss;
 	actionsDiffByState = 1;
 	actResStatesInitialized = 0;
+	startState = NULL;
 	numThreads = 1;
 	// TODO Should do sanity checks here
 
@@ -129,6 +130,28 @@ void ActionEffectTrans::initPartActResStates(int s_start, int s_end, int na) {
 	}
 	return;
 }
+  
+int ActionEffectTrans::setStartState(State *s){
+  // Check that this is a valid state TODO
+
+  // Set the start state
+  startState = s;
+  return MDP_SUCCESS;
+}
+  
+int ActionEffectTrans::setStartState(int sId){
+  // Check that this is a valid state
+  startState = (State *)statesVL->getState(sId);
+  if(startState == NULL)
+    return MDP_ERROR;
+
+  return MDP_SUCCESS;
+}
+  
+State *ActionEffectTrans::getStartState(){
+  return(startState);
+}
+
 
 float ActionEffectTrans::transitionProb(Action* action, State* s1, State* s2) {
 	vector< StateProb> spVect;

@@ -35,8 +35,8 @@ VarDesc::VarDesc() {
 }
 
 VarDesc::VarDesc(string name, int type, float min, float max) {
-	this->name = name;
-	this->type = type;
+        this->name = string(name);
+        this->type = type;
 	this->min = min;
 	this->max = max;
 	this->step = 1;
@@ -44,7 +44,7 @@ VarDesc::VarDesc(string name, int type, float min, float max) {
 }
 
 VarDesc::VarDesc(string name, int type, float min, float max, float step) {
-	this->name = name;
+  this->name = string(name);
 	this->type = type;
 	this->min = min;
 	this->max = max;
@@ -62,7 +62,7 @@ string VarDesc::getName() const {
 }
 
 void VarDesc::setName(string name) {
-	this->name = name;
+  this->name = string(name);
 }
 
 vector<string> VarDesc::getCatLabels() const

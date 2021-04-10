@@ -73,11 +73,12 @@ int StateSpaceVarList::setReachableStates(vector<int> reachableIDs) {
 
 int StateSpaceVarList::addDiscreteVar(string name, int min, int max) {
 	// extra whitespace in a name causes a crash
-	boost::trim_right(name);
+  string varName(name);
+  boost::trim_right(varName);
 	VarDesc *newVar;
-	newVar = new VarDesc(name, DISCRETE, (float)min, (float)max);
+	newVar = new VarDesc(varName, DISCRETE, (float)min, (float)max);
 	varDescList.push_back(newVar);
-	varLabels.push_back(name);
+	varLabels.push_back(varName);
 	varType.push_back(DISCRETE);
 	varNumValues.push_back(max - min + 1);
 	varMinValues.push_back((float)min);
@@ -97,11 +98,12 @@ int StateSpaceVarList::addDiscreteVar(string name, int min, int max) {
 }
 
 int StateSpaceVarList::addContinuousVar(string name, float min, float max, float step) {
-	boost::trim_right(name);
+  string varName(name);
+  boost::trim_right(varName);
 	VarDesc *newVar;
-	newVar = new VarDesc(name, CONTINUOUS, min, max, step);
+	newVar = new VarDesc(varName, CONTINUOUS, min, max, step);
 	varDescList.push_back(newVar);
-	varLabels.push_back(name);
+	varLabels.push_back(varName);
 	varType.push_back(CONTINUOUS);
 	int nv = (int)(floor((max - min)/step) + 1.0);
 	varNumValues.push_back(nv);
@@ -123,11 +125,12 @@ int StateSpaceVarList::addContinuousVar(string name, float min, float max, float
 }
 
 int StateSpaceVarList::addCategoryVar(string name) {
-	boost::trim_right(name);
+  string varName(name);
+  boost::trim_right(varName);
 	VarDesc *newVar;
-	newVar = new VarDesc(name, CATEGORY, (float)0.0, (float)0.0);
+	newVar = new VarDesc(varName, CATEGORY, (float)0.0, (float)0.0);
 	varDescList.push_back(newVar);
-	varLabels.push_back(name);
+	varLabels.push_back(varName);
 	varType.push_back(CATEGORY);
 	varNumValues.push_back(0);
 	varMinValues.push_back((float)0);

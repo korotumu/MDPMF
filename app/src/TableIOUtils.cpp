@@ -73,7 +73,7 @@ IOTable readTableFromFile(string filename, string sepStr) {
 	for (tokenizer::iterator it(tok.begin()), end(tok.end()); it != end; ++it)	{
 		tmpStr = *it;
 //		tmpStr = trim(tmpStr);
-		rowVect.push_back(tmpStr);
+		rowVect.push_back(string(tmpStr));
 	}
 	int iotRet = retTab.setColNames(rowVect);
 	unsigned int numCols = rowVect.size();
@@ -87,7 +87,7 @@ IOTable readTableFromFile(string filename, string sepStr) {
 		for (tokenizer::iterator it(tok.begin()), end(tok.end()); it != end; ++it)	{
 			tmpStr = *it;
 	//		tmpStr = trim(tmpStr);
-			rowVect.push_back(tmpStr);
+			rowVect.push_back(string(tmpStr));
 		}
 		if(rowVect.size() != numCols) {
 			cout << "ERROR: Line " << lineNum << " of file " << filename << " has the wrong number of values.\n";

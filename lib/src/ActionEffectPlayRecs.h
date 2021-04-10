@@ -29,10 +29,11 @@
 #ifndef SC_PLAYRECS_H_
 #define SC_PLAYRECS_H_
 
-#include "Mdpmf.h"
-#include "TableIOUtils.h"
-#include <iostream>
-#include <stdio.h>
+#include "MDP.h"
+#include "IOTable.h"
+#include "StateSpaceVarList.h"
+#include "StateProb.h"
+#include "ActionSequence.h"
 #include <vector>
 #include <string>
 #include <cstring>

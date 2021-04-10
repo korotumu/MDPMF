@@ -32,10 +32,6 @@
 #include "MDPlib.h"
 #include <iostream>
 #include <stdio.h>
-#include "ActionEffectTable.h"
-#include "ActionEffectTrans.h"
-#include "ActionEffectReward.h"
-#include "ActionEffectPlayRecs.h"
 #include "PersonParams.h"
 
 // For arithmetic expression parsing:
